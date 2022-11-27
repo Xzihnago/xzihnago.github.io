@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Positional Notation Calculator</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+</head>
+
+<body>
+  <!-- Root -->
+  <div id="root">
+
+    <!-- Header -->
+    <div id="header">
+      <h1>Positional Notation Calculator</h1>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+
+      <!-- Mode -->
+      <div class="block horizontal">
+        <button type="button" onclick="changeMode(0)" class="button border active" style="width: 12rem;">Sign and Magnitude</button>
+        <button type="button" onclick="changeMode(1)" class="button border" style="width: 12rem;">Base-1 Complement</button>
+        <button type="button" onclick="changeMode(2)" class="button border" style="width: 12rem;">Base Complement</button>
+      </div>
+
+      <!-- Input -->
+      <div class="block horizontal border rounded">
+        <div class="block">
+          <p class="title">Base</p>
+          <input type="number" placeholder="Base" value="2" min="2" max="36" onchange="changeBase(this)">
+        </div>
+        <div class="block">
+          <p class="title">Significant digit</p>
+          <input type="number" placeholder="Significant digit" value="4" min="0" onchange="changeDigit(this)">
+        </div>
+        <div class="block">
+          <p class="title">Number A</p>
+          <input type="text" placeholder="Number A" onkeydown="return checkInput(event)" oninput="toUpper(this)">
+        </div>
+        <div class="block">
+          <p class="title">Number B</p>
+          <input type="text" placeholder="Number B" onkeydown="return checkInput(event)" oninput="toUpper(this)">
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div class="block border rounded" style="position: relative">
+        <p class="rounded highlight" style="position: absolute; top: 0; left: 0; width: 11rem;">Sign and Magnitude</p>
+        <p class="rounded highlight" style="position: absolute; bottom: 0; right: 0; width: 5rem;">Base 2</p>
+        <p class="rounded highlight" style="position: absolute; top: 0; right: 0; width: 5rem;">4 Digit</p>
+        <p class="result" style="padding: 2.5rem; font-size: 2rem;">0</p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div>
+        <p>Copyright © 2022 Xzihnago. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Script -->
+  <script src="index.js"></script>
+</body>
+
+</html>
